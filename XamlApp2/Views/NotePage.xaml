@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamlApp2.Views.NotePage"
+             Title="NotePage">
+    <StackLayout>
+        <StackLayout x:Name="noteStack">
+            <Label Text="Заметка" Margin="20, 0" />
+            <Entry Text="{Binding Note}" FontSize="Medium"  Margin="20"/>
+            <Label Text="Текст заметки" Margin="20, 0" />
+            <Editor Text="{Binding NText}" FontSize="Medium" HeightRequest="180" Margin="20" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Button Text="Добавить" Command="{Binding ListViewModel.SaveNoteCommand}" CommandParameter="{Binding}" />
+            <Button Text="Удалить" Command="{Binding ListViewModel.DeleteNoteCommand}" CommandParameter="{Binding}" />
+            <Button Text="Назад" Command="{Binding ListViewModel.BackCommand}" />
+        </StackLayout>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
